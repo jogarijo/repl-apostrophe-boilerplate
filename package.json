@@ -1,0 +1,36 @@
+{
+  "name": "repl-apostrophe-boilerplate",
+  "version": "0.0.1",
+  "description": "Minimal Apostrophe Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon -q"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jogarijo/repl-apostrophe-boilerplate.git"
+  },
+  "author": "P'unk Avenue",
+  "license": "MIT",
+  "dependencies": {
+    "apostrophe": "2.83.1"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.10"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "lib/modules/*/public/js/*.js",
+      "locales/*.json",
+      "public/modules/**/*.less",
+      "public/modules/**/*.js",
+      "public/uploads",
+      "public/apos-minified/*.js",
+      "public/css/master-*.less",
+      "data"
+    ],
+    "ext": "json, js, html, less"
+  }
+}
