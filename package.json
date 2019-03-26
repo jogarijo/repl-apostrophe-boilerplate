@@ -11,10 +11,11 @@
     "type": "git",
     "url": "https://github.com/jogarijo/repl-apostrophe-boilerplate.git"
   },
-  "author": "P'unk Avenue",
+  "author": "Jonathan GARIJO",
   "license": "MIT",
   "dependencies": {
-    "apostrophe": "2.83.1"
+    "apostrophe": "2.83.1",
+    "apostrophe-pieces-orderings-bundle": "2.0.3"
   },
   "devDependencies": {
     "nodemon": "1.18.10"
