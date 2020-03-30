@@ -2,13 +2,13 @@
 
 ## Issue description
 
-[...]
+The middleware `addGlobalToData` from `apostrophe-global` runs before `afterRequired` middlewares from other modules.
 
 ## Deviations of this REPL
 
 This REPL is based on Apostrophe Boilerplate v2.x, with the main changes described below:
 
-- [...]
+- Added a module `test-after-required-middleware` whose sole purpose is to return an `afterRequired` middleware. This middleware returns the value of `req.data.global` if it exists, and the string `not reproduced` otherwise.
 
 See the commit(s) of this branch for detailed changes.
 
@@ -27,5 +27,8 @@ npm run dev                                  # Start with auto-reload
 
 ## How to reproduce
 
-1. [Login to the REPL environment](http://localhost:3000/login);
-1. [...]
+1. Start the server using `npm start` or `npm run dev`;
+1. Send a request to the server:
+    - With your browser: [localhost:3000](http://localhost:3000);
+    - With cUrl: `curl localhost:3000`;
+1. If you can reproduce the issue, the server will return the `apostrophe-global` document as JSON.
