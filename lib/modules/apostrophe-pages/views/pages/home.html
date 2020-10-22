@@ -7,11 +7,23 @@
 
 {% block main %}
   <div class="main-content">
-    <h3>Hello world!
-      {% if not data.user %}
-        <a class="login-link" href="/login">Login</a>
-      {% endif %}
-    </h3>
-    <p>This is a very bare bones Apostrophe project. Now, get to work and make a real website!</p>
+    <h3>Value for <code>apos.modules['demo-module'].getOption('demoOption')</code></h3>
+
+    <table>
+      <tr>
+        <th>In-page rendering</th>
+        <th>Route rendering</th>
+      </tr>
+      <tr>
+        <td>{{ apos.modules['demo-module'].getOption('demoOption') }}</td>
+        <td data-route-render></td>
+      </tr>
+    </table>
+
+    <script>
+      fetch('/modules/demo-module/render')
+        .then((res) => res.text())
+        .then((optionValue) => document.querySelector('[data-route-render]').innerText = optionValue)
+    </script>
   </div>
 {% endblock %}
